@@ -1,3 +1,4 @@
+test.py
 .idea/
 
 .ipynb_checkpoints/
@@ -5,6 +6,7 @@
 __pycache__/
 
 .vscode/
+
 
 build/
 
