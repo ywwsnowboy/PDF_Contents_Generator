@@ -37,7 +37,7 @@ class WriteTxtToPDF:
                 parent = None
 
             # 添加目录项
-            new_bookmark = pdf_writer.addBookmark(title=line.strip(), pagenum=page_num, parent=parent)
+            new_bookmark = pdf_writer.add_outline_item(title=line.strip(), page_number=page_num, parent=parent)
 
             # 更新父目录列表
             parent_bookmarks[level - 1] = new_bookmark
@@ -59,13 +59,14 @@ class WriteTxtToPDF:
 
                 # 读取原始PDF
                 with open(input_pdf_path, 'rb') as origin_pdf_file:
-                    pdf_reader = PyPDF2.PdfFileReader(origin_pdf_file)
-                    pdf_writer = PyPDF2.PdfFileWriter()
+                    pdf_reader = PyPDF2.PdfReader(origin_pdf_file)
+                    pdf_writer = PyPDF2.PdfWriter()
+                    # pdf_writer = PyPDF2.PdfFileWriter()
 
                     # 将原始PDF的每一页添加到新PDF
-                    for page_num in range(pdf_reader.numPages):
-                        page = pdf_reader.getPage(page_num)
-                        pdf_writer.addPage(page)
+                    for page_num in range(len(pdf_reader.pages)):
+                        page = pdf_reader.pages[page_num]
+                        pdf_writer.add_page(page)
 
                     self.add_page_number_to_pdf(pdf_writer, lines)
 

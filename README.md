@@ -9,11 +9,11 @@
 
 ## 使用方法
 
-1. 首先使用`福昕阅读器`将下载的文档进行 OCR 识别，并将文档保存，保存该 pdf 到 input 文件夹中
+1. 首先使用`福昕阅读器`将下载的文档进行 OCR 识别，并将文档保存，保存该 pdf 到 `input_pdf` 文件夹中
 
 ![image-20230911110715280](https://vip2.loli.io/2023/09/11/UHviNgk7FaLItMJ.png)
 
-2. 然后手动将目录提取出来，保存在`input_txt`文件夹中，保存为 txt 文档，形式如下：
+2. 然后手动将PDF目录提取出来，如果需要处理txt目录，保存在`input_txt`文件夹中，如果不需要，则直接将txt目录存放在保存在`input_txt`文件夹中：
 
 ![image-20230911111053123](https://vip2.loli.io/2023/09/11/KiokPFWQRrGNHLa.png)
 

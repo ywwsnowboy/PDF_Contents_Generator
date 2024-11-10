@@ -4,10 +4,12 @@ from HandlePDF import WriteTxtToPDF
 from HandleTXT import ModifyTXT
 
 # 定义文件夹路径
-input_folder = "input"
-output_folder = "output"
-input_txt_folder = "input_txt"
-output_txt_folder = "output_txt"
+# 如果需要处理txt目录，则需要将txt目录存放在input_txt文件夹中，is_modify_txt和is_write_txt_to_pdf均为1，is_write_txt_to_pdf_with_no_page_information为0
+# 如果不需要，则直接将txt目录存放在output_txt文件夹中，is_modify_txt和is_write_txt_to_pdf均为0，is_write_txt_to_pdf_with_no_page_information为1
+input_txt_folder = "input_txt" # 这里存放需要处理的txt目录
+output_txt_folder = "output_txt" # 这里存放处理过后的txt目录
+input_folder = "input_pdf" # 这里存放需要处理的pdf文档
+output_folder = "output_pdf" # 这里存放加入txt目录后最终的pdf
 
 
 # 如果输出文件夹不存在，创建它
@@ -20,8 +22,11 @@ output_txt_files = [f for f in os.listdir(output_txt_folder) if f.endswith('.txt
 input_txt_files = [f for f in os.listdir(input_txt_folder) if f.endswith('.txt')]
 
 # 进行哪些操作，如果值为 1 表示执行，如果值为 0，表示不执行
+# 功能一
 is_modify_txt = 0
+# 功能二
 is_write_txt_to_pdf = 0
+# 功能三
 is_write_txt_to_pdf_with_no_page_information = 1
 
 if is_modify_txt == 1:
