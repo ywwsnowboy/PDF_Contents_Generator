@@ -4,13 +4,13 @@ import PyPDF2
 
 class WriteTxtToPDF:
 
-    def __init__(self, input_folder, output_folder, output_txt_folder, pdf_files, output_txt_files, page_init_number,
+    def __init__(self, input_folder, output_folder, output_txt_folder, pdf_files, mid_txt_folder, page_init_number,
                  page_data):
         self.input_folder = input_folder
         self.output_folder = output_folder
         self.output_txt_folder = output_txt_folder
         self.pdf_files = pdf_files
-        self.output_txt_files = output_txt_files
+        self.mid_txt_folder = mid_txt_folder
         self.page_init_number = page_init_number
         self.page_data = page_data
 
@@ -47,7 +47,7 @@ class WriteTxtToPDF:
             base_name = os.path.splitext(pdf_file)[0]
             txt_file = base_name + ".txt"
 
-            if txt_file in self.output_txt_files:
+            if txt_file in self.mid_txt_folder:
                 # 获取文件路径
                 input_pdf_path = os.path.join(self.input_folder, pdf_file)
                 txt_path = os.path.join(self.output_txt_folder, txt_file)

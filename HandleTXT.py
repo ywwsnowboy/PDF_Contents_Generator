@@ -21,15 +21,15 @@ def extract_values(line):
 
 class ModifyTXT:
 
-    def __init__(self, input_txt_folder, output_txt_folder, input_txt_files):
+    def __init__(self, input_txt_folder, mid_txt_folder, input_txt_files):
         self.input_txt_folder = input_txt_folder
-        self.output_txt_folder = output_txt_folder
+        self.mid_txt_folder = mid_txt_folder
         self.input_txt_files = input_txt_files
 
     def modify_txt_to_new_txt(self):
         for txt_file in self.input_txt_files:
             input_path = os.path.join(self.input_txt_folder, txt_file)
-            output_path = os.path.join(self.output_txt_folder, txt_file)
+            output_path = os.path.join(self.mid_txt_folder, txt_file)
 
             with open(input_path, 'r', encoding='utf-8') as f:
                 lines = f.readlines()
